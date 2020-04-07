@@ -1,13 +1,14 @@
-[x,Fs] = audioread('female_high_11.wav');
-n = 1:round(length(x)/3);
-x = (x(n))';
+load('input_signal');
+x = input_signal;
+t = 1:length(x);
+
 Y1 = fft(x);
 [Y2,N] = dft(x);
 Y1 = Y1(1:N);
 Y2 = Y2(1:N);
 
 figure;
-plot(n,x);
+plot(t,x);
 
 figure;
 
