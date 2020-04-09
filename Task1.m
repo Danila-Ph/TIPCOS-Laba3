@@ -1,6 +1,4 @@
-load('input_signal');
-x = input_signal;
-t = 1:length(x);
+[x,t] = gen_sig(1000,5,20,100,300,0,30,120,90,3,1.9,1.2,0.3);
 
 Y1 = fft(x);
 [Y2,N] = dft(x);

@@ -1,11 +1,8 @@
-load('input_signal');
-x = input_signal;
-t = 1:length(x);
+[x,t] = gen_sig(1000,5,20,100,300,0,30,120,90,3,1.9,1.2,0.3);
+
 %% Task 2
 
-n = 1:round(length(x)/10);
 [Y,N] = dft(x);
-Y = Y(1:N);
 
 [cA, sA] = SinCosAmps(Y);
 %% Task 3
@@ -20,9 +17,9 @@ plot(x1);
 
 figure;
 subplot(2,1,1);
-plot(Mk);
+plot(0:length(Mk)-1,Mk);
 subplot(2,1,2);
-plot(fik);
+plot(0:length(fik)-1,fik);
 %% Task 5
 
 x2 = sintez_harm(Mk,fik);
